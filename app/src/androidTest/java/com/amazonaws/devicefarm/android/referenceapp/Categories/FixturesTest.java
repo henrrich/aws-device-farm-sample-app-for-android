@@ -42,7 +42,7 @@ public class FixturesTest extends BaseADFTest {
     /**
      * Tests if the wifi is on
      */
-    @Test
+    //@Test
     public void testWifiOn (){
         assertIdStatus(R.id.wifi, true);
     }
@@ -50,7 +50,7 @@ public class FixturesTest extends BaseADFTest {
     /**
      * Tests if the bluetooth is on
      */
-    @Test
+    //@Test
     public void testBluetoothOn() {
         assertIdStatus(R.id.bluetooth, true);
     }
@@ -58,7 +58,7 @@ public class FixturesTest extends BaseADFTest {
     /**
      * Tests if the gps is on
      */
-    @Test
+    //@Test
     public void testGpsOn() {
         assertIdStatus(R.id.gps, true);
     }
@@ -66,7 +66,7 @@ public class FixturesTest extends BaseADFTest {
     /**
      * Tests if the nfc is on. Fails on devices with no nfc support
      */
-    @Test
+    //@Test
     public void testNfcOn() {
         assertIdStatus(R.id.nfc, true);
     }

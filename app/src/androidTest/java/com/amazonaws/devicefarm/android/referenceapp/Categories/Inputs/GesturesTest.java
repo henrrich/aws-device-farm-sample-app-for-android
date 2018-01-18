@@ -47,7 +47,7 @@ public class GesturesTest extends InputControlsBase {
     /**
      * Tests a fling gesture by performing it and then checking if the action is displayed
      */
-    @Test
+    //@Test
     public void testFling(){
         onView(withId(R.id.input_gesture_action_pad)).perform(ViewActions.swipeUp());
         checkIfEitherActionIsDisplayed("Fling", "Scroll");
@@ -56,7 +56,7 @@ public class GesturesTest extends InputControlsBase {
     /**
      * Tests a long press gesture by performing it and then checking if the action is displayed
      */
-    @Test
+    //@Test
     public void testLongPress(){
         onView(withId(R.id.input_gesture_action_pad)).perform(ViewActions.longClick());
         checkIfActionIsDisplayed("Long Press");
@@ -66,7 +66,7 @@ public class GesturesTest extends InputControlsBase {
     /**
      * Tests a single press gesture by performing it and then checking if the action is displayed
      */
-    @Test
+    //@Test
     public void testSinglePress(){
         clickId(R.id.input_gesture_action_pad);
         checkIfActionIsDisplayed("Single tap confirmed");
