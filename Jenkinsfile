@@ -17,8 +17,9 @@ pipeline {
           def uploadSpec = """{
             "files": [
               {
-                "pattern": "app/build/outputs/apk/debug/*.apk",
+                "pattern": "*/app/build/outputs/apk/debug/*.apk",
                 "target": "android-snapshot-local/android-demo-app/"
+                "props": "status=new_build"
               }
             ]
           }"""
