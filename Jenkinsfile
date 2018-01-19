@@ -18,7 +18,7 @@ pipeline {
             "files": [
               {
                 "pattern": "*/app/build/outputs/apk/debug/*.apk",
-                "target": "android-snapshot-local/android-demo-app/"
+                "target": "android-snapshot-local/android-demo-app/",
                 "props": "status=new_build"
               }
             ]
