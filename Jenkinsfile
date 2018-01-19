@@ -4,13 +4,16 @@ pipeline {
     stage('build') {
       agent any
       steps {
-        deleteDir()
-        git 'https://github.com/henrrich/aws-device-farm-sample-app-for-android.git'
-        sh 'fastlane test'
+        #cleanWs()
+        #git 'https://github.com/henrrich/aws-device-farm-sample-app-for-android.git'
+        #sh 'fastlane test'
       }
     }
     stage('upload') {
       steps {
+
+        pwd()
+
         script {
           def server = Artifactory.newServer url: 'http://localhost:8081/artifactory/', username: 'native', password: 'native'
           
