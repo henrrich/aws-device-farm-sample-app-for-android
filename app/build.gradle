@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 
-tasks.whenTaskAdded { task ->
-    if (task.name == 'build')
-        task.dependsOn('connectedAndroidTest')
-}
+//tasks.whenTaskAdded { task ->
+//    if (task.name == 'build')
+//        task.dependsOn('connectedAndroidTest')
+//}
 
 android {
     compileSdkVersion 22
