@@ -2,36 +2,35 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      agent any
       steps {
-        #cleanWs()
-        #git 'https://github.com/henrrich/aws-device-farm-sample-app-for-android.git'
-        #sh 'fastlane test'
+        cleanWs()
+    git 'https://github.com/henrrich/aws-device-farm-sample-app-for-android.git'
+        sh 'fastlane test'
       }
     }
     stage('upload') {
       steps {
 
-        pwd()
-
         script {
+
+            echo pwd()
+
+            sh 'ls -la'
+
+            sh 'ls -l app/build/outputs/apk/debug'
+
           def server = Artifactory.newServer url: 'http://localhost:8081/artifactory/', username: 'native', password: 'native'
-          
+
           def uploadSpec = """{
             "files": [
               {
-                "pattern": "*/app/build/outputs/apk/debug/*.apk",
+                "pattern": "app/build/outputs/apk/debug/*.apk",
                 "target": "android-snapshot-local/android-demo-app/",
                 "props": "status=new_build"
               }
             ]
           }"""
-          def buildInfo = server.upload(uploadSpec)
-          buildInfo.env.capture = true
-          
-          buildInfo.name = 'android_demo_app'
-          buildInfo.number = 'v1.2.3'
-          server.publishBuildInfo buildInfo
+          server.upload(uploadSpec)
         }
         
       }
