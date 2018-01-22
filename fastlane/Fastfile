@@ -15,7 +15,7 @@ platform :android do
   desc "Runs all the tests"
   lane :test do
     gradle(task: "clean")
-    gradle(task: "cAT")
+    gradle(task: "build")
   end
 
   #desc "Submit a new Beta Build to Crashlytics Beta"

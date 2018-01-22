@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+tasks.whenTaskAdded { task ->
+    if (task.name == 'build')
+        task.dependsOn('connectedAndroidTest')
+}
+
 android {
     compileSdkVersion 22
     buildToolsVersion '26.0.2'
