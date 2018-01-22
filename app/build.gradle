@@ -27,6 +27,12 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    task printVersionName {
+        doLast {
+            println android.defaultConfig.versionName
+        }
+    }
 }
 
 repositories {
