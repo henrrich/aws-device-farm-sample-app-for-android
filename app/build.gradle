@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "referenceapp"
+        applicationId "com.amazonaws.devicefarm.android.referenceapp"
         minSdkVersion 10
         targetSdkVersion 22
         versionCode 1
